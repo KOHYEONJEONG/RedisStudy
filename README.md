@@ -11,6 +11,10 @@
 ## 레디스 의존성 추가
 - implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
+## 전략
+@Cacheable : Cache Aside 전력으로 캐싱이 적용됨. 
+ㄴCache Aside 전략은 캐시에서 데이터를 확인하고, 없다면 db를 통해 조회해오는 방식
+
 ## 포스트맨 실행(레디스 로컬 서버 먼저 실행 후 진행)
 url : http://localhost:8080/boards
 
