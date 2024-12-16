@@ -11,5 +11,13 @@
 ## 레디스 의존성 추가
 - implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
-## 포스트맨 실행
+## 포스트맨 실행(레디스 로컬 서버 먼저 실행 후 진행)
 url : http://localhost:8080/boards
+
+## 정상적으로 캐싱이 됐는지 확인하기
+- Redis에 저장되어 있는 모든 key 조회 (명령어)
+  - keys * 
+- 특정 key의 Value 조회
+  - get getBoards::boards:page:1:size:10
+- 특정 key의 TTL 조회
+  - ttl getBoards::boards:page:1:size:10 
