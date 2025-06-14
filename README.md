@@ -31,17 +31,6 @@
 - Redis 개발 경험을 보유
 
 ---------------------------------------------
-## 설치 및 설정
-- MySql 8점대 버전 설치 + WorkBench 설치
-- 레디스 설치(윈도우)
-  - https://ittrue.tistory.com/318#google_vignette
-- 레디스 실행 확인
-  - 명령어 : ping
-  ->> PONG
----------------------------------------------
-## properties 파일 -> 변경 -> yml 파일로 통일
-- src/main/resources/application.yml
----------------------------------------------
 ## 레디스 명령어(가장 많이 사용되는 7가지 명령어) 
 - 1. 데이터(Key, value)저장
   - ✅set [key 이름] [value]
@@ -77,20 +66,23 @@
   - 3. 검색 및 필터링 용이성 : 패턴 매칭을 사용해 특정 유형의 Key를 쉽게 찾을 수 있다.
   - 4. 확장성 : 서로 다른 Key와 이름이 겹쳐 충돌할 일이 적어진다.
 ---------------------------------------------
+## 설치 및 설정
+- MySql 8점대 버전 설치 + WorkBench 설치
+- 레디스 설치(윈도우)
+  - https://ittrue.tistory.com/318#google_vignette
+- 레디스 실행 확인
+  - 명령어 : ping
+    ->> PONG
+  - 
 ## 레디스 의존성 추가
 - implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-
+---------------------------------------------
+## properties 파일 -> 변경 -> yml 파일로 통일
+- src/main/resources/application.yml
+---------------------------------------------
 ## 전략
 - @Cacheable : Cache Aside 전략으로 캐싱이 적용됨. 
   - Cache Aside 전략은 캐시에서 데이터를 확인하고, 없다면 db를 통해 조회해오는 방식
 
 ## 포스트맨 실행(레디스 로컬 서버 먼저 실행 후 진행)
 - url : http://localhost:8080/boards
-
-## 정상적으로 캐싱이 됐는지 확인하기(명령어)
-- [Redis에 저장되어 있는 모든 key 조회]
-  - keys * 
-- [특정 key의 Value 조회]
-  - get getBoards::boards:page:1:size:10
-- [특정 key의 TTL 조회]
-  - ttl getBoards::boards:page:1:size:10 
