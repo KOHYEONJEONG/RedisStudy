@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # 내가만든 엔티티 정보가 db에 반영이 돼서 테이블이 생성되게끔 세팅을 해준다.
     show-sql : true
   data:
     redis:
