@@ -17,6 +17,10 @@ public class BoardController {
         this.boardService = boardService;
     }
 
+    /*
+    * 여러 게시글 조회
+    * ㄴ 페이지네이션을 위해 page, size 파라미타로 받음
+    * */
     @GetMapping()
     public List<Board> getBoards(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size) {
         return boardService.getBoards(page, size); // 1, 10
