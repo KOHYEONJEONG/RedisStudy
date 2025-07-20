@@ -21,8 +21,8 @@ public class BoardService {
         //    해당 메서드로 요청이 들어오면 레디스를 확인한 후에 데이터가 있다면 레디스의 데이터를 조회해서 바로 응답한다.
         //    만약 데이터가 없다면 메서드 내부의 로직을 실행시킨 뒤에 return 값으로 응답한다.
         //    그리고 그 return 값을 레디스에 저장
-    @Cacheable(cacheNames = "getBoards", key = "'boards:page:' + #page + ':size:' + #size", cacheManager = "boardCacheManager")
     // 해석 : board:page:1:size:10 = 게시글에 페이지 1번 페이지에 사이즈가 10개짜리인 데이터
+    @Cacheable(cacheNames = "getBoards", key = "'boards:page:' + #page + ':size:' + #size", cacheManager = "boardCacheManager")
     public List<Board> getBoards(int page, int size){
         //cacheNames : 캐시 이름을 설정
 
