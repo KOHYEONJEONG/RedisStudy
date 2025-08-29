@@ -4,7 +4,15 @@
 -- (아래에서 생성할 더미 데이터의 개수와 맞춰서 작성하면 된다.)
 SET SESSION cte_max_recursion_depth = 1000000;
 
--- 2.boards 테이블에 더미 데이터 삽입
+-- 2. boards 테이블 생성
+CREATE TABLE boards (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 3.boards 테이블에 더미 데이터 삽입
 INSERT INTO boards (title, content, created_at)
 WITH RECURSIVE cte (n) AS
 (

@@ -74,7 +74,7 @@
   - 명령어 : ping
     ->> PONG
   - 
-## 레디스 의존성 추가
+## 레디스 의존성 추가(build.gradle 파일)
 - implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 ---------------------------------------------
 ## properties 파일 -> 변경 -> yml 파일로 통일
