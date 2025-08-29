@@ -24,10 +24,5 @@ public class BoardController {
     @GetMapping()
     public List<Board> getBoards(@RequestParam(name = "page", defaultValue = "1") int page, @RequestParam(name = "size",defaultValue = "10") int size) {
         return boardService.getBoards(page, size); // 1, 10
-
-        //캐시 생성 로그  : Creating cache entry for key 'boards:page:1:size:10' in cache(s) [getBoards]
-        //새로고침 시 (캐시로 조회) :
-        //              Computed cache key 'boards:page:2:size:10' for operation Builder[public java.util.List org.example.redisspring.BoardService.getBoards(int,int)] caches=[getBoards] | key=''boards:page:' + #page + ':size:' + #size' | keyGenerator='' | cacheManager='boardCacheManager' | cacheResolver='' | condition='' | unless='' | sync='false'
-        //              Cache entry for key 'boards:page:1:size:10' found in cache(s) [getBoards]
     }
 }

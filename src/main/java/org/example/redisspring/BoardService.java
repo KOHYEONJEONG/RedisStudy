@@ -35,7 +35,9 @@ public class BoardService {
         return pageOfBoards.getContent();
     }
 
-//    1. 캐시에 없어서 -> 2025-07-10T00:14:18.521+09:00 TRACE 14956 --- [nio-8090-exec-1] o.s.cache.interceptor.CacheInterceptor   : No cache entry for key 'boards:page:null:size:null' in cache(s) [getBoards]
-//    2. 데이터 조회 -> Hibernate: select b1_0.id,b1_0.content,b1_0.created_at,b1_0.title from boards b1_0 order by b1_0.created_at desc limit ?
+    //캐시 생성 로그  : Creating cache entry for key 'boards:page:1:size:10' in cache(s) [getBoards]
+    //재요청 시 (캐시로 조회) :
+    //              Computed cache key 'boards:page:2:size:10' for operation Builder[public java.util.List org.example.redisspring.BoardService.getBoards(int,int)] caches=[getBoards] | key=''boards:page:' + #page + ':size:' + #size' | keyGenerator='' | cacheManager='boardCacheManager' | cacheResolver='' | condition='' | unless='' | sync='false'
+    //              Cache entry for key 'boards:page:1:size:10' found in cache(s) [getBoards]
 
 }
