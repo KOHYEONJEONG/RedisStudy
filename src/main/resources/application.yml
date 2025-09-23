@@ -13,9 +13,9 @@ spring:
       highlight_sql: true      # 콘솔 하이라이트(선택)
     show-sql : true
   data:
-    redis:
-      host: localhost
-      port: 6379 # Redis 기본 포트
+    redis: # 레디스 설정
+      host: localhost # 레디스 설정 , IP
+      port: 6379 # 레디스 설정 , Redis 기본 포트
 
 logging:
   level:

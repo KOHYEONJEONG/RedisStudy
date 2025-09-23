@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -16,7 +15,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 @Configuration
-@EnableCaching // Spring Boot의 캐싱 설정을 활성화
+@EnableCaching // Spring Boot의 캐싱 설정을 활성화 , 스프링의 캐시 추상화 기능을 활성화 이후 서비스 메서드에 🚨@Cacheable, @CacheEvict, @CachePut🚨 같은 애노테이션을 사용할 수 있게 됨.
 public class RedisCacheConfig {
     @Bean
     public CacheManager boardCacheManager(RedisConnectionFactory redisConnectionFactory) {
